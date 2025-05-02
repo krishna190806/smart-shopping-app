@@ -1,1 +1,1 @@
-# smart-shopping-app
+# SGP

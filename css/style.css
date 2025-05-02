@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-image: linear-gradient(rgba(138, 197, 149, 0.5), rgba(138, 197, 149, 0.5)), url('https://img.freepik.com/premium-photo/woman-hand-hold-supermarket-shopping-cart-with-fresh-fruit-vegetable-shelves-grocery-store_293060-6001.jpg'); */
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background:rgba(255,255,255,0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%;
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#signup-form {
+    display: none;
+}

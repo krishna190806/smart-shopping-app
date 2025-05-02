@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(138, 197, 149, 0.6), rgba(138, 197, 149, 0.6)), url('https://img.pikbest.com/wp/202342/pink-illustration-3d-rendering-of-shopping-carts-on-a-background_9862813.jpg!sw800');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark green navbar */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar .menu a:hover {
+            background-color: #2e7d32; /* Dark green on hover */
+            transform: scale(1.1);
+        }
+
+        .navbar .menu a.sale-link {
+            background-image: linear-gradient(45deg, #9be15d, #00e676); /* Green gradient for SALE link */
+            color: white;
+            animation: sparkle 2s infinite;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            margin: 120px 0 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .sale-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .sale-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .sale-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sale-item .discount {
+            font-size: 16px;
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sale-item p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .sale-item .recipe-container {
+            margin-top: 10px;
+        }
+
+        .sale-item .recipe-dropdown {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #2b8c5d; /* Green button */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2e7d32; /* Darker green on hover */
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function toggleRecipe(checkbox, dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = checkbox.checked ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <a href="customer.html">Home</a>
+            <a href="buy_products.html">Buy Products</a>
+          
+            <a href="sale.html" class="sale-link">SALE</a>
+            <a href="about-us.html">Contact Us</a>
+            <a href="../main.html">Logout</a>
+        </div>
+    </div>
+
+    <h1>Exclusive SALE Offers!</h1>
+    <div class="content">
+        <p>Don't miss out on our amazing deals! Limited time only.</p>
+    </div>
+
+    <div class="sale-items">
+        <div class="sale-item">
+            <h3>Bread Loaf</h3>
+            <div class="discount">Discount: 20% off</div>
+            <p><strong>Price:</strong> ₹40 <del>₹32</del></p>
+            <a href="buy-item.html" class="btn">Buy Now</a>
+            <div class="recipe-container">
+                <label>
+                    <input type="checkbox" onclick="toggleRecipe(this, 'dropdown1')"> Show Recipes
+                </label>
+                <select id="dropdown1" class="recipe-dropdown">
+                    <option>French Toast</option>
+                    <option>Breadcrumbs</option>
+                    <option>Stuffing</option>
+                </select>
+            </div>
+        </div>
+        <div class="sale-item">
+            <h3>Yogurt Cup</h3>
+            <div class="discount">Discount: 20% off</div>
+            <p><strong>Price:</strong> ₹20 <del>₹12</del></p>
+            <a href="buy-item.html" class="btn">Buy Now</a>
+            <div class="recipe-container">
+                <label>
+                    <input type="checkbox" onclick="toggleRecipe(this, 'dropdown2')"> Show Recipes
+                </label>
+                <select id="dropdown2" class="recipe-dropdown">
+                    <option>Yogurt Smoothie</option>
+                    <option>Yogurt Parfait</option>
+                    <option>Greek Salad</option>
+                </select>
+            </div>
+        </div>
+        <div class="sale-item">
+            <h3>Spinach</h3>
+            <div class="discount">Discount: 20% off</div>
+            <p><strong>Price:</strong> ₹25 <del>₹20</del></p>
+            <a href="buy-item.html" class="btn">Buy Now</a>
+            <div class="recipe-container">
+                <label>
+                    <input type="checkbox" onclick="toggleRecipe(this, 'dropdown3')"> Show Recipes
+                </label>
+                <select id="dropdown3" class="recipe-dropdown">
+                    <option>Spinach Smoothie</option>
+                    <option>Spinach Pasta</option>
+                    <option>Spinach Salad</option>
+                </select>
+            </div>
+        </div>
+        <div class="sale-item">
+            <h3>Wheat</h3>
+            <div class="discount">Discount: 20% off</div>
+            <p><strong>Price:</strong> ₹200 <del>₹160</del></p>
+            <a href="buy-item.html" class="btn">Buy Now</a>
+            <div class="recipe-container">
+                <label>
+                    <input type="checkbox" onclick="toggleRecipe(this, 'dropdown4')"> Show Recipes
+                </label>
+                <select id="dropdown4" class="recipe-dropdown">
+                    <option>Whole Wheat Bread</option>
+                    <option>Wheat Porridge</option>
+                    <option>Wheat Pancakes</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

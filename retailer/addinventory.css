@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(138, 197, 149, 0.5), rgba(138, 197, 149, 0.5)), url('https://static.vecteezy.com/system/resources/thumbnails/023/381/224/small/colorful-array-of-fresh-fruits-on-display-at-local-greengrocer-generative-ai-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form-container {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: darkgreen;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: darkgreen;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
+button {
+    background-color: darkgreen;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu a:hover {
+    background-color: darkgreen;
+}

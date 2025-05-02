@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(138, 197, 149, 0.5), rgba(138, 197, 149, 0.5)), url('https://t3.ftcdn.net/jpg/09/30/89/18/360_F_930891893_uQnRJBGy8yDZ8sRJ5qH15tTsfNxeY7ET.jpg');
+    background-size: cover;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu a:hover {
+    background-color: darkgreen;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: red;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: green;
+}
+
+.edit-btn {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.update-btn {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.edit-mode input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+}

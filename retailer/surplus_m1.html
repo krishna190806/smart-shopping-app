@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Actions for Near-Expiry Items</title>
+    <link rel="stylesheet" href="surplus_m.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- <div class="navbar">
+        <a href="retailer.html">Home</a>
+        <a href="inventory.php">Inventory Dashboard</a>
+        <a href="surplus_m.html">Surplus Management</a>
+        <a href="expired_products.php">Near-Expiry Products</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="../main.html">Logout</a>
+    </div> -->
+    <div class="navbar">
+      <div class="menu">
+        <a href="retailer.html"><i class="fas fa-home"></i> Home</a>
+        <a href="inventory.php"
+          ><i class="fas fa-box"></i> Inventory Dashboard</a
+        >
+        <a href="surplus_m.html"
+          ><i class="fas fa-chart-line"></i> Surplus Management</a
+        >
+        <a href="expired_products.php"
+          ><i class="fas fa-exclamation-triangle"></i> Near-Expiry Products</a
+        >
+        <a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="../main.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+
+    <h2>Inventory Table - Near-Expiry Items</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Expiry Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inventory-table-body">
+        <!-- Items will be dynamically populated here -->
+      </tbody>
+    </table>
+
+    <script>
+      // Define some inventory data
+      const inventoryItems = [
+        {
+          name: "Milk",
+          category: "Dairy",
+          quantity: 10,
+          expiryDate: "2025-01-15",
+        },
+        {
+          name: "Wheat Flour",
+          category: "Grains",
+          quantity: 20,
+          expiryDate: "2025-02-10",
+        },
+        {
+          name: "Bread",
+          category: "Bakery",
+          quantity: 15,
+          expiryDate: "2025-01-08",
+        },
+        {
+          name: "Eggs",
+          category: "Dairy",
+          quantity: 30,
+          expiryDate: "2025-01-10",
+        },
+      ];
+
+      // Define the near-expiry threshold (7 days)
+      const nearExpiryThreshold = 7;
+
+      // Function to check if an item is near expiry
+      function isNearExpiry(expiryDate) {
+        const currentDate = new Date();
+        const expiry = new Date(expiryDate);
+        const timeDiff = expiry - currentDate;
+        const daysRemaining = timeDiff / (1000 * 3600 * 24);
+        return daysRemaining <= nearExpiryThreshold;
+      }
+
+      // Function to render the inventory table
+      function renderInventory() {
+        const tbody = document.getElementById("inventory-table-body");
+        tbody.innerHTML = ""; // Clear existing content
+
+        // Filter items to display only those that are near expiry
+        inventoryItems.forEach((item) => {
+          if (isNearExpiry(item.expiryDate)) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>${item.category}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.expiryDate}</td>
+                        <td>
+                            <button class="discount-btn" onclick="applyDiscount('${item.name}')">Apply Discount</button>
+                            <button class="donate-btn" onclick="donateItem('${item.name}')">Donate</button>
+                        </td>
+                    `;
+            tbody.appendChild(row);
+          }
+        });
+      }
+
+      // Function to apply discount to an item and redirect
+      function applyDiscount(itemName) {
+        alert(
+          `Discount applied for ${itemName}. Customers will see the updated price.`
+        );
+        window.location.href = "expired_products.php"; // Redirect after clicking "Apply Discount"
+      }
+
+      // Function to donate an item
+      function donateItem(itemName) {
+        alert(`${itemName} has been marked for donation. Thank you!`);
+        // Add your backend logic here
+      }
+
+      // Initialize the table on page load
+      window.onload = function () {
+        renderInventory();
+      };
+    </script>
+  </body>
+</html>

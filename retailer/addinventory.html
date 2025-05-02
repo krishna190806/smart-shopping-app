@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Update Inventory</title>
+    <link rel="stylesheet" href="addinventory.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <a href="retailer.php">Home</a>
+            <a href="inventory.php">Inventory Table</a>
+            <a href="surplus_m.php">Surplus Management</a>
+            <a href="expired_products.php">Expired Products</a>
+            <a href="about-us.html">About Us</a>
+            <a href="login.html">Login</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h1>Add/Update Inventory</h1>
+        <form action="add_inventory.php" method="POST">
+            <label for="product-name">Product Name</label>
+            <input type="text" id="product-name" name="product_name" placeholder="Enter product name" required>
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select category</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Grains">Grains</option>
+                <option value="Baked Goods">Baked Goods</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Condiments">Condiments</option>
+            </select>
+
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required>
+
+            <label for="unit-type">Unit Type</label>
+            <input type="text" id="unit-type" name="unit_type" placeholder="e.g., Bottles, Pieces" required>
+
+            <label for="expiry-date">Expiry Date</label>
+            <input type="date" id="expiry-date" name="expiry_date" required>
+
+            <label for="price">Price/Unit (₹)</label>
+            <input type="number" step="0.01" id="price" name="price_per_unit" placeholder="Enter price per unit" required>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+</body>
+</html>
